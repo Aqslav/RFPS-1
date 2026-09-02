@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToniaCorp — Зворотній зв'язок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container header">
+        <a class="brand" href="index.html">TC <span>ToniaCorp</span></a>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="directions.html">Напрями діяльності</a>
+            <a class="active" href="feedback.html">Зворотній зв'язок</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-title">
+        <div class="container">
+            <h1>Зворотній зв'язок</h1>
+            <p>Заповніть форму для участі в промо-акції.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container form-container">
+            <form id="feedbackForm" novalidate>
+                <fieldset>
+                    <legend>Персональна інформація</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Прізвище та ім'я *</label>
+                            <input id="name" type="text" required>
+                            <small id="nameError"></small>
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail *</label>
+                            <input id="email" type="email" required>
+                            <small id="emailError"></small>
+                        </div>
+                        <div class="field">
+                            <label for="age">Вік *</label>
+                            <input id="age" type="number" min="14" max="120" required>
+                            <small id="ageError"></small>
+                        </div>
+                        <div class="field">
+                            <label for="education">Освіта *</label>
+                            <select id="education" required>
+                                <option value="">Оберіть</option>
+                                <option>Повна</option>
+                                <option>Неповна</option>
+                                <option>Вища</option>
+                                <option>Професійна</option>
+                            </select>
+                            <small id="educationError"></small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="purpose">Мета зворотнього зв'язку *</label>
+                    <select id="purpose" required>
+                        <option value="">Оберіть</option>
+                        <option>Співпраця</option>
+                        <option>Скарга на порушення права власності</option>
+                        <option>Пропозиція</option>
+                        <option>Наявність помилки</option>
+                    </select>
+                    <small id="purposeError"></small>
+                </div>
+
+                <div class="field">
+                    <label for="details">Детально *</label>
+                    <textarea id="details" maxlength="1000" required></textarea>
+                    <div class="counter"><small id="detailsError"></small><span id="counter">0 / 1000</span></div>
+                </div>
+
+                <label class="consent"><input id="consent" type="checkbox" required> Я погоджуюся на обробку інформації.</label>
+                <small id="consentError"></small>
+
+                <div class="actions">
+                    <button class="button" type="submit">Відправити</button>
+                    <button class="button secondary" type="reset">Очистити</button>
+                </div>
+                <p id="formMessage" class="message"></p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <strong>ToniaCorp</strong>
+        <p>м. Київ, вул. Здановської Юлії 55 · +380692286741</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

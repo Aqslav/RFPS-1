@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #111;
+    --gray: #666;
+    --light: #f4f4f4;
+    --white: #fff;
+    --border: #ccc;
+}
+
+body {
+    margin: 0;
+    color: var(--black);
+    background: var(--white);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+}
+
+.header {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    font-weight: 700;
+}
+
+.brand span {
+    margin-left: 6px;
+}
+
+nav {
+    display: flex;
+    gap: 4px;
+}
+
+nav a {
+    padding: 7px 9px;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--light);
+}
+
+.hero,
+.page-title {
+    border-bottom: 1px solid var(--border);
+}
+
+.hero {
+    padding: 80px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    color: var(--gray);
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+h1 {
+    max-width: 750px;
+    margin: 10px 0 18px;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.05;
+}
+
+h2 {
+    margin: 0 0 10px;
+}
+
+h3 {
+    margin: 28px 0 10px;
+}
+
+.page-title {
+    padding: 50px 0;
+    background: var(--light);
+}
+
+.page-title h1 {
+    font-size: 42px;
+}
+
+.page-title p {
+    margin: 0;
+    color: var(--gray);
+}
+
+.section {
+    padding: 55px 0;
+}
+
+.muted {
+    background: var(--light);
+    border-top: 1px solid var(--border);
+}
+
+.roman-list {
+    padding-left: 30px;
+    list-style-type: upper-roman;
+}
+
+.roman-list li {
+    padding: 3px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th,
+td {
+    padding: 11px;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+th {
+    font-weight: 700;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding-bottom: 18px;
+    border: 1px solid var(--border);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.card h2,
+.card p,
+.card small {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+.card small {
+    display: block;
+    color: var(--gray);
+}
+
+.button {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    font: inherit;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: .8;
+}
+
+.button.secondary {
+    background: var(--white);
+    color: var(--black);
+}
+
+.back {
+    margin-top: 35px;
+}
+
+.form-container {
+    max-width: 780px;
+}
+
+form {
+    padding: 25px;
+    border: 1px solid var(--border);
+}
+
+fieldset {
+    margin: 0 0 22px;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+legend {
+    padding: 0 7px;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--white);
+    color: var(--black);
+    font: inherit;
+}
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 140px;
+    max-height: 240px;
+    resize: vertical;
+}
+
+small {
+    color: var(--gray);
+}
+
+.field small,
+#consentError {
+    display: block;
+    min-height: 18px;
+    color: #b00000;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.consent {
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+}
+
+.consent input {
+    width: auto;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.message {
+    margin-bottom: 0;
+}
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin-bottom: 0;
+    color: var(--gray);
+}
+
+@media (max-width: 700px) {
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .cards,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
