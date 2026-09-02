@@ -4,8 +4,8 @@
 
 :root {
     --black: #111;
-    --gray: #666;
-    --light: #f4f4f4;
+    --gray: hsl(0, 0%, 50%);
+    --light: rgb(228, 228, 228);
     --white: #fff;
     --border: #ccc;
 }
@@ -28,6 +28,10 @@ a {
     margin: 0 auto;
 }
 
+.cards h2,
+.big-font{
+    font-family: 'Georgia', sans-serif;
+}
 header {
     border-bottom: 1px solid var(--border);
 }
@@ -102,7 +106,7 @@ h3 {
     background: var(--light);
 }
 
-.page-title h1 {
+.page-title > h1 {
     font-size: 42px;
 }
 
@@ -150,6 +154,11 @@ th {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .card {
@@ -327,4 +336,19 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.waving{
+    display: inline-block;
+    animation: wave 2s infinite;
+}
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
 }
