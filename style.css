@@ -44,8 +44,13 @@ header {
     gap: 20px;
 }
 
+.absolute {
+    position: absolute;
+    top: 0;
+}
 .brand {
     font-weight: 700;
+    font-size: 40px;
 }
 
 .brand span {
@@ -54,6 +59,7 @@ header {
 
 nav {
     display: flex;
+    padding: 0 0 0 60%;
     gap: 4px;
 }
 
@@ -161,9 +167,16 @@ th {
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
+.card-border{
+    padding: 18px;
+    background: rgb(153, 71, 0);
+    border: 3px double var(--black);
+    border-right: 3px solid var(--black);
+}
 .card {
     padding-bottom: 18px;
     border: 1px solid var(--border);
+    background: var(--white);
 }
 
 .card img {
@@ -173,12 +186,23 @@ th {
     object-fit: cover;
     margin-bottom: 18px;
 }
-
+.card:hover img{
+    filter: saturate(2);
+    transition: filter 0.3s ease;
+}
+.card:active a{
+    color: rgb(0, 116, 8);
+}
 .card h2,
 .card p,
 .card small {
     margin-left: 18px;
     margin-right: 18px;
+}
+.card small{
+    font-size: 12px;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .card p {
@@ -212,7 +236,10 @@ th {
 .back {
     margin-top: 35px;
 }
-
+.margin-no-padding{
+    margin: 10px 150px;
+    padding: 0;
+}
 .form-container {
     max-width: 780px;
 }
@@ -314,6 +341,10 @@ footer p {
     margin-bottom: 0;
     color: var(--gray);
 }
+footer:hover{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: text-shadow 2s ease;
+}
 
 @media (max-width: 700px) {
     .header {
@@ -351,4 +382,9 @@ footer p {
     50% { transform: rotate(10deg); }
     60% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
+}
+
+.bigger:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
 }
