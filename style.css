@@ -31,6 +31,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     width: min(1000px, 92%);
     margin: 0 auto;
@@ -150,6 +155,7 @@ h3 {
 }
 
 .roman-list {
+    flex: 1 1 320px;
     padding-left: 30px;
     list-style-type: upper-roman;
 }
@@ -181,8 +187,10 @@ th {
     gap: 20px;
 }
 .card:hover {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    -webkit-transition: -webkit-transform 0.1s ease, box-shadow 0.1s ease;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
@@ -202,6 +210,7 @@ th {
 .photo-flip {
     height: 180px;
     margin-bottom: 18px;
+    -webkit-perspective: 900px;
     perspective: 900px;
 }
 
@@ -209,18 +218,23 @@ th {
     position: relative;
     width: 100%;
     height: 100%;
+    -webkit-transition: -webkit-transform .6s ease;
     transition: transform .6s ease;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
 .photo-flip:hover .photo-flip__inner {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
 .photo-flip__side {
     position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0; /* фолбек для браузерів без підтримки inset (напр. старий Edge) */
     inset: 0;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -240,6 +254,7 @@ th {
     padding: 18px;
     background: var(--black);
     color: var(--white);
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
@@ -312,6 +327,7 @@ th {
 
 .warning-modal {
     position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
     inset: 0;
     z-index: 10;
     display: grid;
@@ -359,7 +375,7 @@ th {
     margin-top: 5px;
 }
 .margin-no-padding{
-    margin: 10px 150px;
+    margin: 10px 8%;
     padding: 0;
 }
 .form-container {
@@ -515,6 +531,7 @@ footer:hover{
     }
 
     nav {
+        padding-left: 0;
         flex-wrap: wrap;
     }
 
@@ -532,6 +549,32 @@ footer:hover{
     }
 }
 
+@media (max-width: 480px) {
+    .hero {
+        padding: 48px 0;
+    }
+
+    .page-title {
+        padding: 32px 0;
+    }
+
+    .page-title > h1 {
+        font-size: 32px;
+    }
+
+    .card-border {
+        padding: 12px;
+    }
+
+    .margin-no-padding {
+        margin: 10px 4%;
+    }
+
+    .waving img {
+        height: 120px;
+    }
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -539,8 +582,16 @@ footer:hover{
 }
 
 .waving{
+    flex: 1 1 220px;
+    max-width: 260px;
     display: inline-block;
     animation: wave 2s infinite;
+}
+
+.waving img {
+    max-width: 100%;
+    height: 200px;
+    width: auto;
 }
 @keyframes wave {
     0% { transform: rotate(0deg); }
@@ -554,6 +605,8 @@ footer:hover{
 }
 
 .bigger:hover {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
+    -webkit-transition: -webkit-transform 0.1s ease;
     transition: transform 0.1s ease;
 }
